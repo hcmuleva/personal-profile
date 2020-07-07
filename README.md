@@ -1,2 +1,37 @@
-# personal-profile
-This is a python based project to explore python functionality
+# Personal-Profile
+This is a beginer python based project to explore python functionality for Arpita and Aditya.
+##Learnings 
+Git Learnings
+### Git setup 
+Git clone : This will copy project from server to your local system
+```shell script
+git clone https://github.com/hcmuleva/personal-profile.git
+```
+* git config
+* git init
+* git clone
+* git add
+* git commit
+* git diff
+* git reset
+* git status
+* git rm
+* git log
+* git show
+* git tag
+* git branch
+* git checkout
+* git merge
+* git remote
+* git push
+* git pull
+* git stash
+* [top 20 commands ](https://www.edureka.co/blog/git-commands-with-example/) - Learn these command and update this 
+section(Task for Aditya)
+### Git 20 commands 
+```shell script
+Here python configuration related stuff will come
+
+```
+
+
