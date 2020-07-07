@@ -4,8 +4,16 @@ This is a beginer python based project to explore python functionality for Arpit
 Git Learnings
 ### Git setup 
 Git clone : This will copy project from server to your local system
+make sure you are in right  directory where you want to clone personal-profile project
+perform below list of commands
 ```shell script
+
 git clone https://github.com/hcmuleva/personal-profile.git
+cd personal-profile
+git branch develop
+git pull origin develop
+after changes in your code, 
+
 ```
 * git config
 * git init
