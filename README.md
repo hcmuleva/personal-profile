@@ -14,6 +14,11 @@ git branch develop
 git pull origin develop
 after changes in your code, 
 
+git commit -m "<Your meaningful comment need to be added >"
+git push 
+  or 
+git push --set-upstream origin develop
+
 ```
 * git config
 * git init
