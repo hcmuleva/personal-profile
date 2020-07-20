@@ -1,6 +1,3 @@
-class items :
-    def __init__(self,nameItem) :
-        self.nameIteam = nameItem
-
-    def list(self):
-        print("i want " + self.nameIteam)
+from Lms_Arpita.MongoDb.shopping_list import Shopping
+a = Shopping("icecream",7,70).ShoppingList()
+print(a)
