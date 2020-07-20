@@ -1,5 +1,4 @@
 from MongoConnect import ConnectModule
-from bson.objectid import ObjectId
 a = ConnectModule.connect()
 collection = a.db['Contacts']
 
@@ -9,4 +8,4 @@ class DeleteContact:
         self.reg_id = reg_id
 
     def delete(self):
-        return collection.remove({"_id": ObjectId(self.reg_id)})
+        return collection.remove({"Register Id": self.reg_id})

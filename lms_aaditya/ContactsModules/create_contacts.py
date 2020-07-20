@@ -4,11 +4,12 @@ collection = a.db["Contacts"]
 
 
 class CreateContact:
-    def __init__(self, name, email, phone, register_id):
+
+    def __init__(self, register_id, name, email, phone):
+        self.register_id = register_id
         self.name = name
         self.email = email
         self.phone = phone
-        self.register_id = register_id
 
     def create(self):
         data = {
