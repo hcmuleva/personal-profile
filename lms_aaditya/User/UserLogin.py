@@ -15,12 +15,4 @@ class User:
         print("your register Id id - ", ins)
 
     def user_login(self, user_name, user_pass):
-        user_data = collection.find_one({"User Name ": user_name, "Password ": user_pass})
-        is_authenticated = False
-        if None == user_data:
-            is_authenticated = False
-            print("Authentication failed")
-
-        else:
-            is_authenticated = True
-            return "You are logged in"
+        return collection.find_one({"User Name ": user_name, "Password ": user_pass})

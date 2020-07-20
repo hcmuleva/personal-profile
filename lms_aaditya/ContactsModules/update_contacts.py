@@ -1,5 +1,4 @@
 from MongoConnect import ConnectModule
-from bson.objectid import ObjectId
 my_con = ConnectModule.connect()
 collection = my_con.db["Contacts"]
 
@@ -18,4 +17,4 @@ class UpdateContact:
             "Phone number ": self.uphone
           }
         }
-        return collection.update({"_id": ObjectId(self.reg_id)}, newdata)
+        return collection.update({"Register Id": self.reg_id}, newdata)
