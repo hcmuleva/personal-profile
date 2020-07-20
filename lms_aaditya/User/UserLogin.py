@@ -1,5 +1,4 @@
 from MongoConnect import ConnectModule
-from bson.objectid import ObjectId
 mycon = ConnectModule.connect()
 collection = mycon.db["UserLogin"]
 
@@ -12,7 +11,8 @@ class User:
             "Age ": user_age,
             "Gender ": user_gender
         }
-        return collection.insert_one(register_user)
+        ins = collection.insert_one(register_user).inserted_id
+        print("your register Id id - ", ins)
 
     def user_login(self, user_name, user_pass):
         user_data = collection.find_one({"User Name ": user_name, "Password ": user_pass})

@@ -1,6 +1,6 @@
 from ContactsModules.delete_contact import DeleteContact
 
-get_id = input("Enter document Id to delete :")
+get_id = input("Enter registration Id to delete :")
 
 a = DeleteContact(get_id)
 a.delete()
