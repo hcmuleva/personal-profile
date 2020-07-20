@@ -10,12 +10,10 @@ class CreateContact:
         self.phone = phone
 
     def create(self):
-        Data = {
+        data = {
             "Name ": self.name,
             "Email ID ": self.email,
             "Phone number ": self.phone
         }
 
-        return collection.insert_one(Data)
-
-
+        return collection.insert_one(data)
