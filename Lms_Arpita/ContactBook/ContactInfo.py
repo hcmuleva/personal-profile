@@ -21,3 +21,11 @@ class Contacts:
 
     def update_contact(self, contact_id, contact_data):
         return collection.update_one({"_id": ObjectId(contact_id)}, {"$set": contact_data})
+
+    def getId(self, user_name):
+        compare = collection.find_one({"user name": user_name})
+        if compare is None:
+            print("plz check ur id and password")
+        else:
+            uniqueid = compare["_id"]
+            return uniqueid

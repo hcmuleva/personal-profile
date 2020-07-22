@@ -26,6 +26,13 @@ class User_address:
 
     def update_address(self, address_id, address_data):
         return collection.update_one( {"_id": ObjectId(address_id)},{"$set": address_data})
+    def getId(self, user_name):
+        compare = collection.find_one({"user name": user_name})
+        if compare is None:
+            print("plz check ur id and password")
+        else:
+            uniqueid = compare["_id"]
+            return uniqueid
 
 
 
