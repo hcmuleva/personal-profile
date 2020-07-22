@@ -4,7 +4,7 @@ collection = my_con.db["Contacts"]
 
 
 class UpdateContact:
-    def __init__(self, uname, uemail, uphone, reg_id):
+    def __init__(self, reg_id, uname, uemail, uphone):
         self.uname = uname
         self.uemail = uemail
         self.uphone = uphone
@@ -12,9 +12,10 @@ class UpdateContact:
 
     def update(self):
         newdata = {"$set": {
+            "Registration Id": self.reg_id,
             "Name ": self.uname,
             "Email ID ": self.uemail,
             "Phone number ": self.uphone
           }
         }
-        return collection.update({"Register Id": self.reg_id}, newdata)
+        return collection.update({"Registration Id": self.reg_id}, newdata)

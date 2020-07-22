@@ -1,6 +1,6 @@
 from MongoConnect import ConnectModule
-a = ConnectModule.connect()
-collection = a.db['Address']
+conn = ConnectModule.connect()
+collection = conn.db['Address']
 
 
 class DeleteAddress:
@@ -8,4 +8,4 @@ class DeleteAddress:
         self.reg_id = reg_id
 
     def delete_add(self):
-        return collection.remove({"Register Id": self.reg_id})
+        return collection.remove({"Registration Id": self.reg_id})
