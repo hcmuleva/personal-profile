@@ -15,7 +15,6 @@ class UpdateAddress:
 
     def update_add(self):
         newdata = {"$set": {
-            "Register Id": self.up_register_id,
             "House number ": self.up_house_num,
             "Street ": self.up_street,
             "City ": self.up_city,
@@ -24,4 +23,4 @@ class UpdateAddress:
             "Pin Code": self.up_pincode
             }
         }
-        return collection.update({"Register Id": self.up_register_id}, newdata)
+        return collection.update({"Registration Id": self.up_register_id}, newdata)

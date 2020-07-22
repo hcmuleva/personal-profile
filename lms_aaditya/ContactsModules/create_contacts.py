@@ -13,7 +13,7 @@ class CreateContact:
 
     def create(self):
         data = {
-            "Register Id": self.register_id,
+            "Registration Id": self.register_id,
             "Name ": self.name,
             "Email ID ": self.email,
             "Phone number ": self.phone

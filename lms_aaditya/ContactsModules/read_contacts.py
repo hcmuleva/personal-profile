@@ -9,4 +9,4 @@ class ReadContact:
         self.reg_id = reg_id
 
     def read(self):
-        return collection.find({"Register Id": self.reg_id})
+        return collection.find({"Registration Id": self.reg_id})

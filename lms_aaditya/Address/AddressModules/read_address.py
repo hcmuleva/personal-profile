@@ -9,4 +9,4 @@ class ReadAddress:
         self.reg_id = reg_id
 
     def read_add(self):
-        return collection.find({"Register Id": self.reg_id})
+        return collection.find({"Registration Id": self.reg_id})

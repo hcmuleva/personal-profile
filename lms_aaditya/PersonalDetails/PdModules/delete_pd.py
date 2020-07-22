@@ -1,11 +1,11 @@
 from MongoConnect import ConnectModule
-a = ConnectModule.connect()
-collection = a.db['Contacts']
+conn = ConnectModule.connect()
+collection = conn.db["Personal_details"]
 
 
-class DeleteContact:
+class DeleteDetails:
     def __init__(self, reg_id):
         self.reg_id = reg_id
 
-    def delete(self):
+    def delete_details(self):
         return collection.remove({"Registration Id": self.reg_id})
