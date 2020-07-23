@@ -28,11 +28,8 @@ class User:
 
     def getId(self, object_id, password):
         compare = collection.find_one({"Email_id": object_id, "Password":  password})
-        if compare is None:
-            print("plz check ur id and password")
-        else:
-            uniqueid = compare["_id"]
-            return uniqueid
+        uniqueid = compare["_id"]
+        return uniqueid
 
 
     def delete_user(self, object_id):

@@ -1,8 +1,10 @@
 from bson import ObjectId
 
 from Lms_Arpita.DatabaseConnectivity import MongoConnection
+
 p = MongoConnection.path()
 collection = p.db["ContactBook"]
+
 
 class Contacts:
     def create_contact(self, object_id, user_name, phone_no):
@@ -22,10 +24,8 @@ class Contacts:
     def update_contact(self, contact_id, contact_data):
         return collection.update_one({"_id": ObjectId(contact_id)}, {"$set": contact_data})
 
-    def getId(self, user_name):
-        compare = collection.find_one({"user name": user_name})
-        if compare is None:
-            print("plz check ur id and password")
-        else:
-            uniqueid = compare["_id"]
-            return uniqueid
+    def getContactId(self, object_id):
+        compare = collection.find_one({"object_id": object_id})
+        uniqueid = compare["_id"]
+        return uniqueid
+    
