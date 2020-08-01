@@ -12,6 +12,7 @@ from PersonalDetails.PdModules import read_pd
 from PersonalDetails.PdModules import update_pd
 from PersonalDetails.PdModules import delete_pd
 from flask import Flask, request
+import jwt
 
 app = Flask(__name__)
 
@@ -41,7 +42,15 @@ def user_register():
 def user_login():
     user_data = request.get_json()
     login_details = my_user.user_login(user_data)
-    return str(login_details)
+    if login_details is None:
+        raise Exception("Sorry, not authenticated")
+    else:
+        my_role = login_details["role"]
+        data = {
+            "role": my_role
+        }
+        token = jwt.encode(data, "my_secret_key", algorithm="HS256")
+        return str(token)
 
 
 @app.route("/user/contacts/create", methods=["POST"])
@@ -71,9 +80,15 @@ def update_contact():
 
 @app.route("/user/contacts/delete", methods=["DELETE"])
 def delete_contact():
-    delete_contact_id = request.get_json()
-    del_id = my_del_contact.delete(delete_contact_id)
-    return str(del_id)
+    my_request = request.headers.get("Authorization")
+    print(my_request)
+    mytoken = my_request.split("Bearer ")
+    print(mytoken[1])
+    decoder = jwt.decode(mytoken[1], "my_secret_key", algorithem="HS256")
+    return str(decoder)
+    # delete_contact_id = request.get_json()
+    # del_id = my_del_contact.delete(delete_contact_id)
+    # return str(del_id)
 
 
 @app.route("/user/address/create", methods=["POST"])
