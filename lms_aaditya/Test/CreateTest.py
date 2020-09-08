@@ -1,8 +1,3 @@
-import json
-# from MongoConnect import ConnectModule
-# a = ConnectModule.connect()
-# collection = a.db["Contacts"]
-
 from pymongo import MongoClient
 client = MongoClient('mongodb://localhost:27017/')
 db = client['lms_db']
@@ -20,3 +15,4 @@ class TestCreateContact:
         }
         uid = collection.insert_one(my_data).inserted_id
         assert uid is not None
+        # test passed
